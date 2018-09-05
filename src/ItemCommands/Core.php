@@ -18,13 +18,13 @@ class Core extends PluginBase implements Listener{
 	
 	public function onLoad(){
 		$this->saveDefaultConfig();
-		$this->getLogger()->info(TF::GRAY."Loading items...");
+		$this->getLogger()->info(TF::GRAY."§fLoading Items");
 		foreach($this->getConfig()->getAll() as $stringKey => $data){
 			if($stringKey === "settings"){
 				continue;
 			}
 			$this->items[$stringKey] = new Item($this, $stringKey, isset($data["lore"]) ? $data["lore"] : [], $data["name"], $data["commands"], $data["runAs"]);
-			$this->getLogger()->info(TF::DARK_GREEN."Loaded ".$this->items[$stringKey]->getName());
+			$this->getLogger()->info(TF::DARK_GREEN."§fLoaded ".$this->items[$stringKey]->getName());
 		}
 	}
 	
