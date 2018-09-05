@@ -72,7 +72,7 @@ class Item{
 	public function getLore(): array{
 		$lore = [];
 		foreach($this->lore as $lor){
-			$lore[] = "§7".$lor."§r";
+			$lore[] = "§f".$lor."§f";
 		}
 		return $lore;
 	}
@@ -81,7 +81,7 @@ class Item{
 	 * @return string
 	 */
 	public function getName(): string{
-		$name = "§r".$this->name."§r";
+		$name = "§f".$this->name."§f";
 		return $name;
 	}
 	
@@ -153,7 +153,7 @@ class Item{
 					$item->setCount(1);
 					$inv->removeItem($item);
 				}
-				$player->sendTip("§7You've used ".$this->getName());
+				$player->sendTip("§fYou Used ".$this->getName());
 			}
 		}
 	}
